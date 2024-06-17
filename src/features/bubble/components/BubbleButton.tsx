@@ -1,7 +1,8 @@
-import { createSignal, Show } from 'solid-js';
-import { isNotDefined, getBubbleButtonSize } from '@/utils/index';
-import { ButtonTheme } from '../types';
+import { getBubbleButtonSize, isNotDefined } from '@/utils/index';
 import { isMobile } from '@/utils/isMobileSignal';
+import { Show, createSignal } from 'solid-js';
+import { ButtonTheme } from '../types';
+import { BubbleLabel } from './BubbleLabel';
 
 type Props = ButtonTheme & {
   isBotOpened: boolean;
@@ -60,6 +61,16 @@ export const BubbleButton = (props: Props) => {
 
   return (
     <Show when={!isMobile() || !props.isBotOpened} keyed>
+      <Show when={!isNotDefined(props.bubbleLabel)} keyed>
+        <BubbleLabel
+          position={position}
+          helperText={props.bubbleLabel}
+          toggleBot={props.toggleBot}
+          backgroundColor={props.backgroundColor}
+          dragAndDrop={props.dragAndDrop}
+          buttonSize={buttonSize}
+        />
+      </Show>
       <button
         part="button"
         onClick={() => props.toggleBot()}

@@ -69,4 +69,5 @@ export type ButtonTheme = {
   bottom?: number;
   right?: number;
   dragAndDrop?: boolean; // parameter to enable drag and drop(true or false)
+  bubbleLabel?: string;
 };
