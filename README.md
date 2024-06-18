@@ -108,6 +108,7 @@ You can also customize chatbot with different configuration
         dragAndDrop: true,
         iconColor: 'white',
         customIconSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
+        bubbleLabel: 'How can I help you today?',
       },
       chatWindow: {
         showTitle: true,
